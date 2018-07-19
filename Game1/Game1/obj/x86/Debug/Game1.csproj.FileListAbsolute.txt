@@ -1,7 +1,0 @@
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\Game1.csprojResolveAssemblyReference.cache
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\App.g.i.cs
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\App.g.cs
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\App.xaml
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\GamePage.xaml
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\App.xbf
-C:\Users\artin\Documents\NewGame\Game1\Game1\obj\x86\Debug\GamePage.xbf
