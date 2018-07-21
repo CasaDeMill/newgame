@@ -32,3 +32,9 @@
 /processorParam:TextureFormat=Compressed
 /build:mainFont.spritefont
 
+#begin musicTest.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:musicTest.mp3
+

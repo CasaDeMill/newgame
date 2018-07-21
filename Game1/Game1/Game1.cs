@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 namespace Game1
 {
@@ -27,6 +29,8 @@ namespace Game1
         KeyboardState prevKs;
 
         Texture2D background;
+
+        Song musicTest;
         
         public Game1()
         {
@@ -60,8 +64,9 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-
+            musicTest = Content.Load<Song>("musicTest");
             background = Content.Load<Texture2D>("bgTest");
+            MediaPlayer.Play(musicTest);
             font = Content.Load<SpriteFont>("mainFont");
         }
 
@@ -85,7 +90,7 @@ namespace Game1
                 Exit();
 
             // TODO: Add your update logic here
-
+            
             prevKs = ks;
             ks = Keyboard.GetState();
 
