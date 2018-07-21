@@ -11,11 +11,29 @@ namespace Game1
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        enum GameState
+        {
+            InGame,
+        }
+
+        int playerChoice;
+
+        GameState currentState;
+
+        SpriteFont font;
+
+        KeyboardState ks;
+        KeyboardState prevKs;
+
+        Texture2D background;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            IsMouseVisible = false;
         }
 
         /// <summary>
@@ -27,7 +45,8 @@ namespace Game1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            currentState = GameState.InGame;
+            playerChoice = 0;
             base.Initialize();
         }
 
@@ -41,6 +60,9 @@ namespace Game1
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
+
+            background = Content.Load<Texture2D>("bgTest");
+            font = Content.Load<SpriteFont>("mainFont");
         }
 
         /// <summary>
@@ -64,6 +86,21 @@ namespace Game1
 
             // TODO: Add your update logic here
 
+            prevKs = ks;
+            ks = Keyboard.GetState();
+
+            if (ks.IsKeyDown(Keys.Down) && prevKs.IsKeyUp(Keys.Down))
+                playerChoice++;
+
+            if (ks.IsKeyDown(Keys.Up) && prevKs.IsKeyUp(Keys.Up))
+                playerChoice--;
+
+            if (playerChoice < 0)
+                playerChoice = 0;
+
+            if (playerChoice > 5)
+                playerChoice = 5;
+
             base.Update(gameTime);
         }
 
@@ -73,10 +110,16 @@ namespace Game1
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
-
+            if (currentState == GameState.InGame)
+            {
+                spriteBatch.Draw(background, new Rectangle(0,0,GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
+                spriteBatch.DrawString(font, playerChoice.ToString(), new Vector2(100, 100), Color.Red);
+            }
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }
