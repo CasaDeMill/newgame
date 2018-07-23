@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Game1
 {
@@ -20,6 +21,7 @@ namespace Game1
             MainMenu,
             InGame,
             Settings,
+            Conversation,
         }
 
         List<int[]> resolutions = new List<int[]>();
@@ -40,6 +42,12 @@ namespace Game1
         Texture2D background;
 
         Song musicTest;
+
+        Dialogue dialogue;
+        bool conversationStarted;
+
+        Conversation test;
+        string[] savedConversationStates;
         
         public Game1()
         {
@@ -63,6 +71,8 @@ namespace Game1
             resolutionChoice = 0;
             resolutions.Add(new[] {1920, 1080});
             resolutions.Add(new[] {1280, 720});
+            savedConversationStates = new string[8];
+            conversationStarted = false;
             base.Initialize();
         }
 
@@ -80,6 +90,10 @@ namespace Game1
             background = Content.Load<Texture2D>("bgTest");
             MediaPlayer.Play(musicTest);
             font = Content.Load<SpriteFont>("mainFont");
+
+            savedConversationStates = File.ReadAllLines(Content.RootDirectory + "//SaveConversation.txt");
+            test = new Conversation(File.ReadAllLines(Content.RootDirectory + "//Dialogue/Test.txt"), false, font, Vector2.Zero, false, false, false, int.Parse(savedConversationStates[0]), 1, 0, false, 0);
+            dialogue = new Dialogue(Content.Load<Texture2D>("Dialogue"), new Vector2(100, 400), false);
         }
 
         /// <summary>
@@ -118,6 +132,10 @@ namespace Game1
 
                 if (playerChoice > 5)
                     playerChoice = 5;
+
+               
+                currentState = GameState.Conversation;
+
             }
 
             if (currentState == GameState.MainMenu)
@@ -178,6 +196,14 @@ namespace Game1
                 }
             }
 
+            if (currentState == GameState.Conversation)
+            {
+                dialogue.Show = true;
+                test.MakeChars();
+                test.PrintText = true;
+                conversationStarted = true;
+            }
+
             base.Update(gameTime);
         }
 
@@ -188,7 +214,6 @@ namespace Game1
         protected override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-
             if (currentState == GameState.MainMenu)
             {
                 GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -200,12 +225,20 @@ namespace Game1
                 GraphicsDevice.Clear(Color.Yellow);
                 spriteBatch.DrawString(font, resolutionChoice.ToString(), new Vector2(100, 100), Color.Red);
             }
+           
+
+            
+
+
 
             // TODO: Add your drawing code here
-            if (currentState == GameState.InGame)
+            if (currentState != GameState.MainMenu && currentState != GameState.Settings)
             {
-                spriteBatch.Draw(background, new Rectangle(0,0,GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
+                spriteBatch.Draw(background, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
                 spriteBatch.DrawString(font, playerChoice.ToString(), new Vector2(100, 100), Color.Red);
+                dialogue.print(spriteBatch);
+                if (test.PrintText == true)
+                    test.Print(spriteBatch, gameTime, ks, prevKs);
             }
             spriteBatch.End();
             base.Draw(gameTime);

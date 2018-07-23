@@ -38,3 +38,21 @@
 /processorParam:Quality=Best
 /build:musicTest.mp3
 
+#begin SaveConversation.txt
+/copy:SaveConversation.txt
+
+#begin Dialogue/Test.txt
+/copy:Dialogue/Test.txt
+
+#begin Dialogue.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Dialogue.png
+

@@ -21,3 +21,6 @@ C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\
 C:\Users\artin\Documents\NewGame\Game1\Game1\obj\Debug\Game1.csprojAssemblyReference.cache
 C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\musicTest.ogg
 C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\musicTest.xnb
+C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\Dialogue\Test.txt
+C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\SaveConversation.txt
+C:\Users\artin\Documents\NewGame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\Dialogue.xnb

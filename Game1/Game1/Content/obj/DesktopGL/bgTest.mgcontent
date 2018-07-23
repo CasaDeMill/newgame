@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/bgTest.jpg</SourceFile>
-  <SourceTime>2018-07-21T11:24:46.1091517+02:00</SourceTime>
+  <SourceTime>2018-07-21T14:27:18.5268049+02:00</SourceTime>
   <DestFile>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/bin/DesktopGL/bgTest.xnb</DestFile>
-  <DestTime>2018-07-21T11:56:47.4933427+02:00</DestTime>
+  <DestTime>2018-07-23T22:25:54.8873523+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
