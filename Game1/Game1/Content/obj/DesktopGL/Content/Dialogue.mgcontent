@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/artin/Source/Repos/newgame/Game1/Game1/Content/Dialogue.png</SourceFile>
+  <SourceFile>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue.png</SourceFile>
   <SourceTime>2019-07-19T17:10:12.1114837+02:00</SourceTime>
-  <DestFile>C:/Users/artin/Source/Repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/Dialogue.xnb</DestFile>
-  <DestTime>2019-07-24T14:02:18.7909045+02:00</DestTime>
+  <DestFile>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/Dialogue.xnb</DestFile>
+  <DestTime>2019-07-24T16:36:06.5821225+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

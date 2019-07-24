@@ -51,3 +51,6 @@ C:\Users\artin\Source\Repos\newgame\Game1\Game1\obj\Debug\Game1.exe
 C:\Users\artin\Source\Repos\newgame\Game1\Game1\obj\Debug\Game1.pdb
 C:\Users\artin\source\repos\newgame\Game1\Game1\obj\Debug\Game1.csprojAssemblyReference.cache
 C:\Users\artin\source\repos\newgame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Content\small_pixel.ttf
+C:\Users\artin\source\repos\newgame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Terminal\Conversation.Json
+C:\Users\artin\source\repos\newgame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.dll
+C:\Users\artin\source\repos\newgame\Game1\Game1\bin\DesktopGL\AnyCPU\Debug\Newtonsoft.Json.xml

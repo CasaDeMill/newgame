@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 
 namespace Game1.Terminal
@@ -69,7 +71,24 @@ namespace Game1.Terminal
 
         private string Reply(string input)
         {
-            return Environment.NewLine + "Ah yes of course my lord";
+            string slicedInput = input.Split('>').Last().Replace(" ", "").ToLower();
+            StreamReader r = new StreamReader(System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("Game1.exe", "")  + "Terminal" + Path.DirectorySeparatorChar + "Conversation.Json");
+            string json = r.ReadToEnd();
+            List<TerminalConversation> tc= JsonConvert.DeserializeObject<List<TerminalConversation>>(json);
+            string reply = "";
+            foreach (TerminalConversation c in tc)
+            {
+                foreach (string i in c.Input.Value)
+                {
+                    if (i.Contains(slicedInput) && slicedInput != "")
+                    {
+                        Random rnd = new Random();
+                        int replyIndex = rnd.Next(0, c.Reply.Value.Length);
+                        reply = c.Reply.Value[replyIndex];
+                    }
+                }
+            }
+            return Environment.NewLine + reply;
         }
     }
 }
