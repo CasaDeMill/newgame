@@ -25,7 +25,7 @@ namespace Game1.Terminal
         }
 
         private StringBuilder input = new StringBuilder();
-        private bool startUp = true;
+        private int startUp = 0;
         public void Listen(KeyboardState keyboardState, KeyboardState previousKeyboardState)
         {     
             foreach (Keys key in keyboardState.GetPressedKeys())
@@ -52,7 +52,6 @@ namespace Game1.Terminal
                     else
                     {
                         input.Append(key);
-                        startUp = false;
                     }
                 }
             }
@@ -60,11 +59,11 @@ namespace Game1.Terminal
             {
                 Print(input.ToString(), input.Length);
             }
-            if (startUp)
+            if (startUp == 0)
             {
-                input.Append(Reply("", "Hello I'm STEFAN. The 100% guarented non sentient companion"));
+                input.Append(Reply("", "Hello I'm STEFAN. The 100% guarented non sentient companion" + Environment.NewLine + Environment.NewLine));
                 Print(input.ToString());
-                startUp = false;
+                startUp++;
             }
         }
 
@@ -72,9 +71,9 @@ namespace Game1.Terminal
         {
             SpriteBatch.Begin();
             SpriteBatch.GraphicsDevice.Clear(Color.SlateGray);
-            if (startUp)
+            if (startUp == 0)
             {
-                SpriteBatch.DrawString(Font, input + Environment.NewLine, new Vector2(20, 20), Color.SeaShell);
+                SpriteBatch.DrawString(Font, input, new Vector2(20, 20), Color.SeaShell);
             }
             else
             {
@@ -85,7 +84,7 @@ namespace Game1.Terminal
 
         private string Reply(string input, string replyOverride = null)
         {
-            if (replyOverride != "")
+            if (replyOverride != "" && replyOverride != null)
             {
                 return Environment.NewLine + replyOverride;
             }
