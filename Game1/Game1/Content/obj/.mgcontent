@@ -4,9 +4,15 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/bgTest.jpg</File>
-    <File>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/mainFont.spritefont</File>
-    <File>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/musicTest.mp3</File>
-    <File>C:/Users/artin/Documents/NewGame/Game1/Game1/Content/Dialogue.png</File>
+    <File>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bgTest.jpg</File>
+    <File>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue.png</File>
+    <File>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/mainFont.spritefont</File>
+    <File>C:/Users/artin/source/repos/newgame/Game1/Game1/Content/musicTest.mp3</File>
   </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
 </SourceFileCollection>
