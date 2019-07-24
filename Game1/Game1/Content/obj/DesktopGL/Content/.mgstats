@@ -1,1 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bgTest.jpg","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/bgTest.xnb","TextureProcessor","Texture2DContent",247635,865605,0.7185162
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue.png","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/Dialogue.xnb","TextureProcessor","Texture2DContent",6811,1200085,0.0508669
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/mainFont.spritefont","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/mainFont.xnb","FontDescriptionProcessor","SpriteFontContent",2078,21521,0.2998227
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/musicTest.mp3","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content/musicTest.xnb","SongProcessor","SongContent",4491342,127,3.003492
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/small_pixel.ttf","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/DesktopGL/Content\small_pixel.ttf","CopyItem","File",12496,12496,0.0063924

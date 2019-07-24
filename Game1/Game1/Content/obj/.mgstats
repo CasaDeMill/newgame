@@ -1,8 +1,8 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bgTest.jpg","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/bgTest.xnb","TextureProcessor","Texture2DContent",247635,865605,0,5221727
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue.png","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/Dialogue.xnb","TextureProcessor","Texture2DContent",6811,1200085,0,1406417
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue/Test.txt","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\Dialogue/Test.txt","CopyItem","File",79,79,0
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/mainFont.spritefont","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/mainFont.xnb","FontDescriptionProcessor","SpriteFontContent",2018,21521,0,6684597
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/musicTest.mp3","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/musicTest.xnb","SongProcessor","SongContent",4491342,127,3,107908
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/SaveConversation.txt","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\SaveConversation.txt","CopyItem","File",25,25,0,0156252
-"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/small_pixel.ttf","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\small_pixel.ttf","CopyItem","File",12496,12496,0
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bgTest.jpg","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/bgTest.xnb","TextureProcessor","Texture2DContent",247635,865605,0.1600794
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue.png","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/Dialogue.xnb","TextureProcessor","Texture2DContent",6811,1200085,0.051862
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/Dialogue/Test.txt","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\Dialogue/Test.txt","CopyItem","File",79,79,0.0019949
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/mainFont.spritefont","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/mainFont.xnb","FontDescriptionProcessor","SpriteFontContent",2078,21521,0.2757295
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/musicTest.mp3","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin/musicTest.xnb","SongProcessor","SongContent",4491342,127,2.83351
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/SaveConversation.txt","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\SaveConversation.txt","CopyItem","File",25,25,0.0019951
+"C:/Users/artin/source/repos/newgame/Game1/Game1/Content/small_pixel.ttf","C:/Users/artin/source/repos/newgame/Game1/Game1/Content/bin\small_pixel.ttf","CopyItem","File",12496,12496,0.0019943

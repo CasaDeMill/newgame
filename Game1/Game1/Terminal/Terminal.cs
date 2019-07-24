@@ -25,9 +25,9 @@ namespace Game1.Terminal
         }
 
         private StringBuilder input = new StringBuilder();
-
+        private bool startUp = true;
         public void Listen(KeyboardState keyboardState, KeyboardState previousKeyboardState)
-        {
+        {     
             foreach (Keys key in keyboardState.GetPressedKeys())
             {
                 if (keyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key))
@@ -52,6 +52,7 @@ namespace Game1.Terminal
                     else
                     {
                         input.Append(key);
+                        startUp = false;
                     }
                 }
             }
@@ -59,18 +60,35 @@ namespace Game1.Terminal
             {
                 Print(input.ToString(), input.Length);
             }
+            if (startUp)
+            {
+                input.Append(Reply("", "Hello I'm STEFAN. The 100% guarented non sentient companion"));
+                Print(input.ToString());
+                startUp = false;
+            }
         }
 
         private void Print(string input, int position = 0)
         {
             SpriteBatch.Begin();
             SpriteBatch.GraphicsDevice.Clear(Color.SlateGray);
-            SpriteBatch.DrawString(Font, "> " + input, new Vector2(20, 20), Color.SeaShell);
+            if (startUp)
+            {
+                SpriteBatch.DrawString(Font, input + Environment.NewLine, new Vector2(20, 20), Color.SeaShell);
+            }
+            else
+            {
+                SpriteBatch.DrawString(Font, "> " + input, new Vector2(20, 20), Color.SeaShell);
+            }
             SpriteBatch.End();
         }
 
-        private string Reply(string input)
+        private string Reply(string input, string replyOverride = null)
         {
+            if (replyOverride != "")
+            {
+                return Environment.NewLine + replyOverride;
+            }
             string slicedInput = input.Split('>').Last().Replace(" ", "").ToLower();
             StreamReader r = new StreamReader(System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("Game1.exe", "")  + "Terminal" + Path.DirectorySeparatorChar + "Conversation.Json");
             string json = r.ReadToEnd();
