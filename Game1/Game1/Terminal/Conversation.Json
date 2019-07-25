@@ -1,10 +1,10 @@
 ﻿[
   {
     "Input": {
-      "Value": [ "hej", "tja" ]
+      "Value": [ "hello", "hi" ]
     },
     "Reply": {
-      "Value": [ "Hej kompis!", "Fuck you"]
+      "Value": [ "Hello friend!", "Fuck you"]
     }
   }
 ]

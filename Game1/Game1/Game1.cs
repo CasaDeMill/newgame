@@ -27,6 +27,8 @@ namespace Game1
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferWidth = 1600;
+            graphics.PreferredBackBufferHeight = 800;
             IsMouseVisible = false;
         }
 
@@ -39,7 +41,6 @@ namespace Game1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            terminal = new Terminal.Terminal();
             base.Initialize();
         }
 
@@ -51,7 +52,7 @@ namespace Game1
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            terminal = new Terminal.Terminal(spriteBatch);
             // TODO: use this.Content to load your game content here
             font = Content.Load<SpriteFont>("mainFont");
             terminal.Font = font;
@@ -79,7 +80,6 @@ namespace Game1
             prevKs = ks;
             ks = Keyboard.GetState();
             terminal.GameTime = gameTime;
-            terminal.SpriteBatch = spriteBatch;
             terminal.Listen(ks, prevKs);
             base.Update(gameTime);
         }

@@ -17,15 +17,22 @@ namespace Game1.Terminal
         public GameTime GameTime { get; set; }
         public SpriteFont Font { get; set; }
 
+        private Texture2D terminalWindow = null;
+        private Vector2 terminalPosition = new Vector2(20, 20);
+        private RoundedRectangle roundedRec = new RoundedRectangle();
         public Terminal(SpriteBatch spriteBatch = null, GameTime gameTime = null, SpriteFont font = null)
         {
             SpriteBatch = spriteBatch;
             GameTime = gameTime;
             Font = font;
+            if (SpriteBatch != null)
+            {
+                terminalWindow = roundedRec.CreateRoundedRectangleTexture(SpriteBatch.GraphicsDevice, 1560, 760, 10, 20, 2, new List<Color> { Color.SlateGray }, new List<Color> { Color.SlateBlue }, 1, 1);
+            }
         }
 
         private StringBuilder input = new StringBuilder();
-        private int startUp = 0;
+        private bool startUp = true;
         public void Listen(KeyboardState keyboardState, KeyboardState previousKeyboardState)
         {     
             foreach (Keys key in keyboardState.GetPressedKeys())
@@ -39,8 +46,7 @@ namespace Game1.Terminal
                     else if (key == Keys.Enter)
                     {
                         input.Append(Reply(input.ToString()));
-                        input.Append(Environment.NewLine);
-                        input.Append("> ");
+                        input.Append(Environment.NewLine + Environment.NewLine + "> ");
                     }
                     else if (key == Keys.Back)
                     {
@@ -57,27 +63,29 @@ namespace Game1.Terminal
             }
             if (input.Length >= 0)
             {
-                Print(input.ToString(), input.Length);
+                Print(input.ToString());
             }
-            if (startUp == 0)
+            if (startUp && input.Length == 0)
             {
                 input.Append(Reply("", "Hello I'm STEFAN. The 100% guarented non sentient companion" + Environment.NewLine + Environment.NewLine));
                 Print(input.ToString());
-                startUp++;
+                startUp = false;
             }
         }
-
-        private void Print(string input, int position = 0)
+        private void Print(string input)
         {
             SpriteBatch.Begin();
-            SpriteBatch.GraphicsDevice.Clear(Color.SlateGray);
-            if (startUp == 0)
+            if (terminalWindow != null)
             {
-                SpriteBatch.DrawString(Font, input, new Vector2(20, 20), Color.SeaShell);
+                SpriteBatch.Draw(terminalWindow, terminalPosition, Color.White);
+            }
+            if (startUp)
+            {
+                SpriteBatch.DrawString(Font, input, terminalPosition + new Vector2(20, 20), Color.SeaShell);
             }
             else
             {
-                SpriteBatch.DrawString(Font, "> " + input, new Vector2(20, 20), Color.SeaShell);
+                SpriteBatch.DrawString(Font, "> " + input, terminalPosition + new Vector2(20, 20), Color.SeaShell);
             }
             SpriteBatch.End();
         }
@@ -105,7 +113,11 @@ namespace Game1.Terminal
                     }
                 }
             }
-            return Environment.NewLine + reply;
+            if (reply == "")
+            {
+                reply = "That is not a known function or command. You can always try saying hello!";
+            }
+            return Environment.NewLine + Environment.NewLine + reply;
         }
     }
 }
